@@ -1,0 +1,55 @@
+@import "antd/dist/antd.css";
+@import "~leaflet/dist/leaflet.css";
+
+body,
+#root,
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+
+  .leaflet-div-icon {
+    background: none;
+    border: none;
+  }
+}
+
+@mixin no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+
+  .item-place {
+    background-color: #fff;
+    min-width: 300px;
+    position: relative;
+
+    .pointer {
+      z-index: 1;
+      position: absolute;
+      right: -5px;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background-color: transparent;
+      transition: 0.2s;
+      cursor: col-resize;
+      @include no-select();
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.301);
+      }
+    }
+  }
+
+  .map-place {
+    flex: 1;
+    background-color: #0ff;
+  }
+  
+}
